@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 40px;
+	font-family: "Open Sans", Arial, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	overflow: hidden;
+	color: white;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+ul {
+	list-style: none;
+}
+
+ul,
+ol {
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+
+input,
+textarea,
+select {
+	outline: none;
+	border: 1px solid gray;
+	appearance: none;
+	background-color: transparent;
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+abbr {
+	text-decoration: none;
+}
+
+img,
+fieldset {
+	border: 0;
+}
+
+img {
+	max-width: 100%;
+}
