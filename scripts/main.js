@@ -25,14 +25,16 @@ let arr = [
   { id: 24, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-03" },
   { id: 25, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-04" },
   { id: 26, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-05" },
-  { id: 27, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-06" },
-  { id: 28, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-07" },
-  { id: 29, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-08" },
-  { id: 30, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-09" },
-  { id: 31, sunrise: "4:40", fajr: "5:40", maghrib: "19:25", sunset: "19:30", date: "2024-04-10" }
+
+  { id: 27, sunrise: "6:32", fajr: "4:44", maghrib: "19:41", sunset: "19:34", date: "2024-04-06" },
+  { id: 28, sunrise: "6:31", fajr: "4:42", maghrib: "19:42", sunset: "19:36", date: "2024-04-07" },
+  { id: 29, sunrise: "6:29", fajr: "4:40", maghrib: "19:43", sunset: "19:37", date: "2024-04-08" },
+  { id: 30, sunrise: "6:27", fajr: "4:38", maghrib: "19:44", sunset: "19:38", date: "2024-04-09" },
+  { id: 31, sunrise: "6:26", fajr: "4:36", maghrib: "19:45", sunset: "19:39", date: "2024-04-10" }
 ];
 
 let today = Today();
+let isRamadan = false;
 
 arr.forEach(e => {
   if (e.date === today) {
@@ -40,16 +42,26 @@ arr.forEach(e => {
     document.querySelector(".section-2 .time").innerHTML = e.fajr;
     document.querySelector(".section-3 .time").innerHTML = e.sunset;
     document.querySelector(".section-4 .time").innerHTML = e.maghrib;
+    
+    isRamadan = true;
+    return;
   }
 })
+
+
+if(!isRamadan) {
+  let block = document.querySelector(".main");
+  block.style.display = "block";
+  block.innerHTML = "<div class='not'>See u in Ramadan</div>";
+} 
 
 
 function Today() {
   let currentDate = new Date();
 
   let year = currentDate.getFullYear();
-  let month = String(currentDate.getMonth() + 1).padStart(2, '0'); // добавляем ведущий ноль, если месяц < 10
-  let day = String(currentDate.getDate()).padStart(2, '0'); // добавляем ведущий ноль, если день < 10
+  let month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  let day = String(currentDate.getDate()).padStart(2, '0');
 
   return `${year}-${month}-${day}`
 }

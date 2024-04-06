@@ -13,11 +13,16 @@
 }
 
 .time-section:nth-child(odd) {
-  background-color: red;
+  background-color: rgb(3, 96, 0);
 }
 
 .time-section:nth-child(even) {
-  background-color: blue;
+  background-color: rgb(93, 131, 96);
+}
+
+.not {
+  background-color: rgb(20 93 18);
+  text-align: center;
 }
 
 @media screen and (max-width: 1024px) {
